@@ -1,0 +1,32 @@
+﻿<Window x:Class="VN_BrackenCave_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VN_BrackenCave_WPF"
+        mc:Ignorable="d"
+        Title="Contract Agreement" Height="800" Width="1080" SizeToContent="WidthAndHeight" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+    <Grid Margin="0,0,0,-6" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="741*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="1033*"/>
+            <ColumnDefinition Width="26*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="EMPLOYMENT CONTRACT" HorizontalAlignment="Left" Margin="13,24,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Calisto MT" FontWeight="Bold" Grid.Column="1" Grid.RowSpan="2"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="547" Margin="58,109,0,0" VerticalAlignment="Top" Width="928" Grid.Column="1" Grid.Row="1">
+            <TextBlock Height="1083" TextWrapping="Wrap" Width="864" FontFamily="Times New Roman" FontSize="18" VerticalAlignment="Top"><Run/><LineBreak/><Run/><LineBreak/><Run Text="This Employee Contract Agreement (referred to as the &quot;Agreement&quot; from now on&quot;) is made and effective |||||||||||||||||||||."/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;BY AND BETWEEN:&#x9;[BOSS MAN], [BOSS MAN ADDRESS, SAN ANTONIO, TEXAS]"/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;AND:&#x9;&#x9;&#x9;[YOU, THE EMPLOYEE], [YOUR ADDRESS, SAN ANTONIO, TEXAS]"/><LineBreak/><Run/><LineBreak/><Run Text="DUTIES AND RESPONSIBILITIES"/><LineBreak/><Run/><LineBreak/><Run Text="The Employee agrees to perform the following duties and responsibilities:"/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;1.  Preserve the Bracken Cave (referred to as the &quot;Cave&quot;)"/><LineBreak/><Run Text="&#x9;&#x9;- More to follow below"/><LineBreak/><Run Text="&#x9;"/><LineBreak/><Run Text="&#x9;2.  Maintain the Ecosystem within the Cave"/><LineBreak/><Run Text="&#x9;&#x9;- The Employee will guard and watch the Cave, report any unusual activity, and stop any &#x9;unauthorized personnel from entering and interacting with the cave. Failure to do so may result in the &#x9;Ecosystem being disturbed and possibly altered. "/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;3. Keep the Bat population in check"/><LineBreak/><Run Text="&#x9;&#x9;- This is a home for many Bats. In any event that the Bat population has been declining, a &#x9;possibility is that there are Hawks around competing with the Bats for food. The Hawks are to be considered &#x9;as an invasive species to the Cave. The Employee's duty is to repel all Hawks as soon as possible. Another &#x9;possibility to the decline will be explained below."/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;4. Keep the crops in check"/><LineBreak/><Run Text="&#x9;&#x9;- The Bats find their food source by the crops, where their prey, the Worms are there to decompose &#x9;the crops. In the event that there are no more crops, there are no more Worms for the bats to feast upon. &#x9;Therefore, the Bat population will decline for this reason as well. The&#x9;Hawk population will not decrease if &#x9;the crops are gone."/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;5. Collect Guano from the Bats"/><LineBreak/><Run Text="&#x9;&#x9;- The Bats of the cave will produce Guano. It is very valuable for the Employers and other &#x9;researchers. The Employee will only be able to collect these once a day, as the Beetles will have consumed &#x9;the rest of the Guano within the Employee's reach, and the Flesh-eating Beetles will prevent the Employee &#x9;from going any further and collecting any more*. One time is enough."/><LineBreak/><Run/><LineBreak/><Run Text="*We are not responsible for any injuries or death related to collecting Guano. By reading this, you agree that you are responsible for your own demise should you try and venture deeper into the cave for more Guano. "/><LineBreak/><Run/><LineBreak/><Run Text="PAY AND COMPENSATION"/><LineBreak/><Run/><LineBreak/><Run Text="The Employee will receive $30 per day. The Employee will also receive compensation for any necessary items bought for the preservation of the Cave when they resign."/><LineBreak/><Run/></TextBlock>
+        </ScrollViewer>
+        <Label Content="By signing this Contract you have read and agreed to the Agreement" HorizontalAlignment="Left" Height="36" Margin="89,661,0,0" VerticalAlignment="Top" Width="515" FontFamily="Times New Roman" FontSize="18" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Signature: __________________________________________________________________________________" HorizontalAlignment="Left" Height="44" Margin="58,702,0,0" VerticalAlignment="Top" Width="698" FontFamily="Times New Roman" FontSize="24" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1"/>
+        <Button x:Name="ProceedButton" Content="Proceed" HorizontalAlignment="Left" Margin="731,697,0,0" VerticalAlignment="Top" Height="38" Width="255" IsEnabled="False" Click="ProceedButton_Click" Grid.Column="1" Grid.Row="1" Initialized="ProceedButton_Initialized"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="166,697,0,0" TextWrapping="Wrap" Text="Name Here" VerticalAlignment="Top" Width="494" Height="36" FontFamily="Freestyle Script" FontSize="36" Background="{x:Null}" TextChanged="NameBox_TextChanged" LostFocus="NameBox_LostFocus" Grid.Column="1" Grid.Row="1" GotFocus="NameBox_GotFocus"/>
+        <Frame x:Name="NavigationFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+
+
+    </Grid>
+</Window>

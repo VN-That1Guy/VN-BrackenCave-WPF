@@ -1,0 +1,54 @@
+﻿<Page x:Class="VN_BrackenCave_WPF.GameMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VN_BrackenCave_WPF"
+      mc:Ignorable="d"
+      Title="VN - The Bracken Cave" Height="800" Width="1080" Loaded="Page_Loaded">
+
+    <Grid Initialized="Grid_Initialized" Background="#FF636324">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="193*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="534*"/>
+            <ColumnDefinition Width="533*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="CropsPortrait" HorizontalAlignment="Left" Height="256" Margin="4,4,0,0" VerticalAlignment="Top" Width="256" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/media/Crops.bmp" Grid.Column="1" Grid.Row="1"/>
+        <Image x:Name="BatsPortrait" HorizontalAlignment="Left" Height="256" Margin="270,4,0,0" VerticalAlignment="Top" Width="256" RenderOptions.BitmapScalingMode="NearestNeighbor" Grid.Column="2" Source="/media/Bats.bmp" Grid.Row="1"/>
+        <Image x:Name="HawksPortrait" HorizontalAlignment="Left" Height="256" Margin="4,10,0,0" VerticalAlignment="Top" Width="256" RenderOptions.BitmapScalingMode="NearestNeighbor" Grid.Row="2" Source="/media/Hawks_none.bmp" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="4,265,0,0" TextWrapping="Wrap" Text="Crops" VerticalAlignment="Top" Width="256" TextAlignment="Center" FontSize="14" Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
+        <TextBlock x:Name="Crop_Statistic" HorizontalAlignment="Left" Height="59" Margin="4,303,0,0" TextWrapping="Wrap" Text="Statistics" VerticalAlignment="Top" Width="260" Grid.Column="1" Grid.Row="1" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="270,274,0,0" TextWrapping="Wrap" Text="Bats" VerticalAlignment="Top" Width="256" TextAlignment="Center" FontSize="16" Grid.Row="1" FontWeight="Bold"/>
+        <TextBlock x:Name="Bat_Statistics" Grid.Column="2" HorizontalAlignment="Left" Height="61" Margin="270,301,0,0" TextWrapping="Wrap" Text="Statistics" VerticalAlignment="Top" Width="256" Grid.Row="1" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="4,266,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Hawks" VerticalAlignment="Top" Width="256" FontSize="16" TextAlignment="Center" Grid.Column="1" FontWeight="Bold"/>
+        <TextBlock x:Name="Hawk_Statistics" HorizontalAlignment="Left" Height="90" Margin="4,289,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Statistics" VerticalAlignment="Top" Width="256" Grid.Column="1" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+        <ScrollViewer x:Name="ScrollBox" Grid.Column="2" Grid.Row="2" Margin="262,155,3,76" Background="#7F000000">
+            <TextBlock x:Name="LogBox" TextWrapping="Wrap" Text="" FontFamily="Cascadia Code" SizeChanged="LogBox_SizeChanged" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        </ScrollViewer>
+        <Label Grid.Column="2" Content="Log" HorizontalAlignment="Left" Height="37" Margin="262,113,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="DayAndName" Grid.Column="1" Content="Day&#xD;&#xA;Name" HorizontalAlignment="Left" Margin="548,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="358" FontSize="18" FontFamily="Arial Rounded MT Bold" Grid.ColumnSpan="2" Height="52"/>
+        <TextBlock x:Name="Player_Stats" Grid.Column="2" HorizontalAlignment="Left" Height="221" Margin="10,79,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="244" FontWeight="Bold"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="14,305,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Time till the next day:" VerticalAlignment="Top" Height="16" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="Timer" Grid.Column="2" HorizontalAlignment="Left" Margin="158,305,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" FontWeight="Bold" FontSize="14" Width="NaN"/>
+        <Button x:Name="NextDay_Button" Grid.Column="2" Content="Go To The Next Day" HorizontalAlignment="Left" Height="32" Margin="10,0,0,25" Grid.Row="2" VerticalAlignment="Bottom" Width="218" Click="NextDay_Button_Click" FontWeight="Bold" FontStyle="Italic"/>
+        <Button x:Name="GotoShop" Grid.Column="2" Content="Go To Shop" HorizontalAlignment="Left" Height="32" Margin="307,0,0,25" Grid.Row="2" VerticalAlignment="Bottom" Width="216" Click="GotoShop_Click" FontWeight="Bold"/>
+        <Image x:Name="ActionPortrait" Grid.Column="2" HorizontalAlignment="Left" Height="128" Margin="388,15,0,0" Grid.Row="2" VerticalAlignment="Top" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/media/blank.bmp"/>
+        <Button x:Name="Hawk_ActionButton" Content="Repell Hawks (-1 Population Level)" HorizontalAlignment="Left" Height="26" Margin="284,329,0,0" Grid.Row="2" VerticalAlignment="Top" Width="227" IsEnabled="False" Click="Hawk_ActionButton_Click" Grid.Column="1"/>
+        <Button x:Name="Crops_FertilizeButton" Content="Fertilize &#xA;(-2 Guano, +2 Density Level)" HorizontalAlignment="Left" Height="36" Margin="271,336,0,0" VerticalAlignment="Top" Width="253" Click="Crops_FertilizeButton_Click" Grid.Column="1" Grid.Row="1" IsEnabled="False"/>
+        <Button x:Name="Crops_PlantSeed" Content="Plant Seeds (-1 Cotton Seed, -1 Corn Seed)&#xD;&#xA;(Requires Fertilizer to Start Growing)" HorizontalAlignment="Left" Height="50" Margin="271,280,0,0" VerticalAlignment="Top" Width="253" Click="Crops_PlantSeed_Click" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="Crops_GetSeeds" Content="Get Seeds&#xD;&#xA;(+1 Cotton Seed +1 Corn Seed)" HorizontalAlignment="Left" Height="40" Margin="271,234,0,0" VerticalAlignment="Top" Width="253" Click="Crops_GetSeeds_Click" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="Bats_GetGuano" Grid.Column="2" Content="Get Guano (+1 Guano)" HorizontalAlignment="Left" Height="36" Margin="20,307,0,0" VerticalAlignment="Top" Width="234" Click="Bats_GetGuano_Click" Grid.Row="1"/>
+        <Image x:Name="Crop_Alert" Grid.Column="1" HorizontalAlignment="Left" Height="64" Margin="271,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" Source="/media/Alert.bmp" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden"/>
+        <Image x:Name="Bat_Alert" Grid.Column="2" HorizontalAlignment="Left" Height="64" Margin="190,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" Source="/media/Alert.bmp" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden"/>
+        <Image x:Name="Hawk_Alert" Grid.Column="1" HorizontalAlignment="Left" Height="64" Margin="271,15,0,0" Grid.Row="2" VerticalAlignment="Top" Width="64" Source="/media/Alert.bmp" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden"/>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="32" Margin="270,329,0,0" Grid.Row="2" VerticalAlignment="Top" Width="32" Source="/media/ShopIcon.BMP" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+
+    </Grid>
+</Page>

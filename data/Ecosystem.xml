@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Ecosystem>
+  <Crops>
+    <Crop Name="Corn" Densitylevel="5" bTaken="false" bGrown="true"></Crop>
+    <Crop Name="Cotton" Densitylevel="5" bTaken="false" bGrown="true"></Crop>
+  </Crops>
+  <Animals>
+    <Animal Name="Bats" Populationlevel="5"></Animal>
+    <Animal Name="Hawks" Populationlevel="0"></Animal>
+  </Animals>
+</Ecosystem>
